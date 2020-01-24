@@ -1,0 +1,41 @@
+{
+  "name": "nodecg-countdown",
+  "version": "1.0.0",
+  "description": "Simple countdown bundle on NodeCG.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cma2819/nodecg-countdown.git"
+  },
+  "keywords": [
+    "NodeCG",
+    "node",
+    "vue",
+    "Typescript"
+  ],
+  "author": "cma2819",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cma2819/nodecg-countdown/issues"
+  },
+  "homepage": "https://github.com/cma2819/nodecg-countdown#readme",
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "include-nodecg": "0.0.3",
+    "parcel-bundler": "^1.12.4",
+    "ts-nodecg": "^0.3.0",
+    "typescript": "^3.7.5",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.2",
+    "vue-eslint-parser": "^7.0.0"
+  },
+  "dependencies": {
+    "nodecg": "^1.5.0"
+  }
+}
