@@ -6,10 +6,12 @@
       "node"
     ],
     "module": "commonjs",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "lib": ["ES2017.String"]
   },
   "include": [
     "**/*.ts",
-    "../nodecg/**/*.ts"
+    "../nodecg/**/*.ts",
+    "../browser/global.d.ts"
   ]
 }

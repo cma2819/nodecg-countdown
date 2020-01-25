@@ -16,6 +16,6 @@
         "graphics/**/*.vue",
         "../nodecg/**/*.ts",
         "../types/**/*.ts",
-        "../nodecg/**/*.ts"
+        "../nodecg/**/*.ts", "global.d.ts"
     ]
 }
