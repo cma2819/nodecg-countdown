@@ -1,14 +1,14 @@
-import { NodeCG } from "./nodecg";
-import { parseTimeString, createTimeStruct, CountdownTimer } from "./time";
+import { NodeCG } from './nodecg';
+import { parseTimeString, createTimeStruct, CountdownTimer } from './time';
 
 let countdownTimer: CountdownTimer;
 
-export const countdown = (nodecg: NodeCG) => {
+export const countdown = (nodecg: NodeCG): void => {
     const countdownRep = nodecg.Replicant('countdown');
 
-    const logger = new nodecg.Logger("Countdown");
+    const logger = new nodecg.Logger('Countdown');
 
-    const start = () => {
+    const start = (): void => {
         if (!countdownRep.value || countdownRep.value.running || !countdownRep.value.time) {
             return;
         }
@@ -20,13 +20,13 @@ export const countdown = (nodecg: NodeCG) => {
         countdownTimer = new CountdownTimer(
             Date.now() + countdownRep.value.time.raw
         );
-        countdownTimer.on("tick", remainingTimeStruct => {
+        countdownTimer.on('tick', remainingTimeStruct => {
             if (!countdownRep.value) {
                 return;
             }
             countdownRep.value.time = remainingTimeStruct;
         });
-        logger.info("start");
+        logger.info('start');
     };
 
     const stop = (): void => {
@@ -37,10 +37,10 @@ export const countdown = (nodecg: NodeCG) => {
         if (countdownTimer) {
             countdownTimer.stop();
         }
-        logger.info("stop");
+        logger.info('stop');
     };
 
-    const edit = (editTime: string, cb: any): void => {
+    const edit = (editTime: string, cb: { handled: true}): void => {
         if (!countdownRep.value) {
             return;
         }
@@ -49,9 +49,9 @@ export const countdown = (nodecg: NodeCG) => {
             const durationMs = parseTimeString(editTime);
             stop();
             countdownRep.value.time = createTimeStruct(durationMs);
-            logger.info("edit to " + editTime);
+            logger.info('edit to ' + editTime);
         } catch {
-            cb("文字列をタイムに変換できません.");
+            cb('文字列をタイムに変換できません.');
             return;
         }
     };

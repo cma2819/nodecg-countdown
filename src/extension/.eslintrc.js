@@ -2,7 +2,8 @@ module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: './tsconfig.json'
+        project: './tsconfig.json',
+        sourceType: 'module'
     },
     extends: [
         'eslint:recommended',
@@ -11,6 +12,7 @@ module.exports = {
         'plugin:import/typescript',
     ],
     rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
         quotes: ['error', 'single']
     }
 };
